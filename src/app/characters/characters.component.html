@@ -1,0 +1,7 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let character of characters"
+                 [routerLink]="'/characters/' + character.name">
+    <mat-grid-tile-header>{{ character.name }}</mat-grid-tile-header>
+    <img [src]="'/assets/characters/' + character.name  + '.jpg'" />
+  </mat-grid-tile>
+</mat-grid-list>
