@@ -1,0 +1,40 @@
+<div *ngIf="!loading; else loadingScreen">
+<div style="display: flex">
+<div>
+  <mat-card class="example-card" *ngIf="character">
+     <mat-card-header>
+       <mat-card-title>{{character.name }}</mat-card-title>
+       <mat-card-subtitle> Appears in {{character.films.length}} Films</mat-card-subtitle>
+     </mat-card-header>
+    <img mat-card-image [src]="'assets/characters/' + character.name + '.jpg'" [alt]="character.name">
+    <mat-card-content>
+</mat-card-content>
+</mat-card>
+</div>
+<div>
+  <mat-list>
+    <mat-list-item>Birth Year: {{ character.birth_year}}</mat-list-item>
+    <mat-list-item>Gender: {{ character.gender }}</mat-list-item>
+    <mat-list-item>Eye Color: {{character.eye_color }}</mat-list-item>
+    <mat-list-item>Height: {{ character.height }}</mat-list-item>
+    <mat-list-item>Mass: {{ character.mass }}</mat-list-item>
+    <mat-list-item>Hair Color: {{ character.hair_color }}</mat-list-item>
+    <mat-list-item>Skin Color: {{ character.skin_color }}</mat-list-item>
+  </mat-list>
+</div>
+</div>
+<br />
+<div>
+  <mat-grid-list cols="3" rowHeight="1:2">
+    <mat-grid-tile *ngFor="let film of films">
+      <mat-grid-tile-header>{{ film.title }}</mat-grid-tile-header>
+      <img [src]="'/assets/films/' + film.episode_id + '.jpg'" />
+      <mat-grid-tile-footer>{{ film.release_date | date:'EEEE, LLLL dd, yyyy'}}</mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+</div>
+<ng-template #loadingScreen>
+<h1 style="color: yellow">LOADING IS THE FORCE........</h1>
+</ng-template>
+
