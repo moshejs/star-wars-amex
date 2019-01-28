@@ -3,7 +3,7 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
-    <img src="assets/logo.png" routerLink="/characters/" (click)="selectCharacter('')"/>
+    <img src="assets/logo.png" routerLink="/characters/" (click)="selectCharacter('')" style="cursor: pointer" />
     <mat-nav-list>
       <a mat-list-item *ngFor="let character of characters"
          [routerLink]="'/characters/' + character.name"
