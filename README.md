@@ -1,5 +1,7 @@
 # StarWars
 
+
+Project based on https://gist.github.com/BearAlliance
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
 ## Development server

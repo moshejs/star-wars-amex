@@ -3,6 +3,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {environment} from '../environments/environment';
+import {Character} from './models/character.model';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,8 @@ import {environment} from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  characters: environment.characters;
-
+  characters: Character[] = environment.characters;
+  selectedCharacter = '';
 
 
 isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -20,4 +21,8 @@ isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Ha
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  selectCharacter(name) {
+    this.selectedCharacter = name;
+  }
 }

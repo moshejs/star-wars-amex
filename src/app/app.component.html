@@ -3,9 +3,11 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary"><span>Menu</span></mat-toolbar>
+    <img src="assets/logo.png" routerLink="/characters/" (click)="selectCharacter('')"/>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let character of characters" [routerLink]="'characters/' + character.name">
+      <a mat-list-item *ngFor="let character of characters"
+         [routerLink]="'/characters/' + character.name"
+          (click)="selectCharacter(character.name)">
         <img matListAvatar [src]="'assets/characters/' + character.name + '.jpg'" [alt]="character.name">
         <h3 matLine>{{ character.name }}</h3>
       </a>
@@ -21,7 +23,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>STAR WARS Characters</span>
+      <span>Characters {{ selectedCharacter.length ? '> ' + selectedCharacter : ''}}</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

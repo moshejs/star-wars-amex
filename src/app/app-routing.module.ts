@@ -1,18 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {CharacterComponent} from './character/character.component';
+import {CharacterResolver} from './services/character.resolver';
+import {ErrorComponent} from './error/error.component';
 import {CharactersComponent} from './characters/characters.component';
 
 const routes: Routes = [
   {
-    path: '/',
-    redirectTo: 'characters'
+    path: '',
+    redirectTo: '/characters',
+    pathMatch: 'full'
+  },
+  {
+    path: 'characters',
+    component: CharactersComponent
   },
   {
     path: 'characters/:name',
-    component: CharactersComponent,
+    component: CharacterComponent,
     resolve: {
       character: CharacterResolver
     }
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   }
 ];
 
