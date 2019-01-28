@@ -3,7 +3,7 @@ const app = express(),
   fs = require('fs');
 
 app.get('/*', function(req, res){
-  var filename = __dirname + '/dist/star-wars/' +  req.params[0];
+  let filename = __dirname + '/dist/star-wars/' +  req.params[0];
   fs.exists(filename, function (exists) {
     if (!exists) {
       res.sendFile(__dirname + '/dist/star-wars/index.html');
