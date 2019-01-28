@@ -28,7 +28,7 @@
     <mat-grid-tile *ngFor="let film of films">
       <mat-grid-tile-header>{{ film.title }}</mat-grid-tile-header>
       <img [src]="'/assets/films/' + film.episode_id + '.jpg'" />
-      <mat-grid-tile-footer>{{ film.release_date | date:'EEEE, LLLL dd, yyyy'}}</mat-grid-tile-footer>
+      <mat-grid-tile-footer>{{ film.release_date | date:'EEEE, LLLL dd yyyy'}}</mat-grid-tile-footer>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
