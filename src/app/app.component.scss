@@ -1,0 +1,33 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+.sidenav .mat-toolbar .mat-nav-list a div {
+  //background: inherit;
+}
+
+.sidenav .mat-nav-list {
+  //background: inherit;
+  text-color: yellow;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: black;
+  background-color: black;
+  text-shadow:
+    -1px -1px 0 yellow,
+    1px -1px 0 yellow,
+    -1px 1px 0 yellow,
+    1px 1px 0 yellow;
+}
